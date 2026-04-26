@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Filsuf Yunani Kuno - Ensiklopedia Lengkap</title>
+    <style>
+        :root {
+            --marmer-putih: #f5f0e8;
+            --marmer-abu: #e8e0d5;
+            --emas-tua: #c9a84c;
+            --emas-gelap: #a07828;
+            --biru-yunani: #1a3a5c;
+            --biru-dalam: #0d2137;
+            --merah-terakota: #b54a35;
+            --hijau-zaitun: #5a6b3c;
+            --teks-gelap: #2c2416;
+            --teks-sedang: #4a3f2f;
+            --teks-terang: #f5f0e8;
+            --bayangan: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --transisi: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(160deg, #fdf8f0 0%, #f0e6d3 30%, #e8dcc8 60%, #f5efe2 100%);
+            background-attachment: fixed;
+            color: var(--teks-gelap);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ornamen latar ala meander Yunani */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(201, 168, 76, 0.03) 40px,
+                    rgba(201, 168, 76, 0.03) 42px),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(201, 168, 76, 0.03) 40px,
+                    rgba(201, 168, 76, 0.03) 42px);
+            opacity: 0.5;
+        }
+
+        /* Kontainer utama */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 24px 60px;
+        }
+
+        /* Header hero */
+        .hero-header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            position: relative;
+        }
+
+        .hero-header .laurel-left,
+        .hero-header .laurel-right {
+            display: inline-block;
+            font-size: 2.8rem;
+            color: var(--emas-tua);
+            vertical-align: middle;
+            animation: floatGentle 4s ease-in-out infinite;
+            opacity: 0.7;
+        }
+        .hero-header .laurel-right {
+            animation-delay: 2s;
+        }
+
+        @keyframes floatGentle {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero-header h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 16px;
+            font-family: 'Cinzel', 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--biru-dalam);
+            text-shadow: 1px 1px 0 rgba(201, 168, 76, 0.4);
+            position: relative;
+        }
+
+        .hero-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--emas-tua), transparent);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            display: block;
+            font-family: 'Cinzel', 'Georgia', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.25em;
+            color: var(--teks-sedang);
+            margin-top: 16px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Panel pencarian dan statistik */
+        .panel-atas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--bayangan);
+        }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .search-wrapper label {
+            font-weight: 600;
+            color: var(--biru-yunani);
+            white-space: nowrap;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+        }
+
+        .search-input-group {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .search-input-group input {
+            width: 100%;
+            padding: 12px 44px 12px 16px;
+            border: 2px solid #d4c5a9;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            background: #fffef9;
+            color: var(--teks-gelap);
+            transition: var(--transisi);
+            font-family: inherit;
+            outline: none;
+        }
+
+        .search-input-group input:focus {
+            border-color: var(--emas-tua);
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.12);
+            background: #ffffff;
+        }
+
+        .search-input-group input::placeholder {
+            color: #b8a88a;
+            font-style: italic;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--emas-gelap);
+            pointer-events: none;
+        }
+
+        .btn-reset {
+            padding: 10px 18px;
+            border: 2px solid var(--merah-terakota);
+            background: transparent;
+            color: var(--merah-terakota);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transisi);
+            white-space: nowrap;
+            font-family: inherit;
+            letter-spacing: 0.03em;
+        }
+
+        .btn-reset:hover {
+            background: var(--merah-terakota);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(181, 74, 53, 0.35);
+        }
+
+        .stat-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--biru-yunani);
+            color: var(--teks-terang);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            letter-spacing: 0.04em;
+        }
+
+        .stat-badge .angka {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--emas-tua);
+        }
+
+        /* Info ringkasan */
+        .ringkasan-cari {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--teks-sedang);
+            margin-bottom: 12px;
+            font-style: italic;
+            min-height: 22px;
+            transition: var(--transisi);
+        }
+        .ringkasan-cari .highlight {
+            font-weight: 700;
+            color: var(--merah-terakota);
+        }
+
+        /* Tabel */
+        .tabel-container {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: var(--bayangan);
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.35);
+        }
+
+        .tabel-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            font-size: 0.9rem;
+        }
+
+        thead th {
+            background: linear-gradient(180deg, var(--biru-yunani) 0%, var(--biru-dalam) 100%);
+            color: var(--teks-terang);
+            padding: 16px 14px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border-bottom: 3px solid var(--emas-tua);
+            white-space: nowrap;
+        }
+
+        thead th:first-child {
+            border-radius: 0;
+            padding-left: 20px;
+        }
+        thead th:last-child {
+            padding-right: 20px;
+        }
+
+        tbody tr {
+            transition: var(--transisi);
+            border-bottom: 1px solid rgba(180, 160, 130, 0.25);
+        }
+
+        tbody tr:hover {
+            background: rgba(201, 168, 76, 0.08);
+            transform: scale(1.004);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        tbody td {
+            padding: 14px 14px;
+            vertical-align: top;
+            color: var(--teks-gelap);
+            line-height: 1.5;
+        }
+        tbody td:first-child {
+            padding-left: 20px;
+            font-weight: 600;
+            color: var(--biru-dalam);
+        }
+        tbody td:last-child {
+            padding-right: 20px;
+        }
+
+        /* Badge aliran */
+        .badge-aliran {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            border: 1px solid;
+        }
+        .badge-alam {
+            background: #e6f0e3;
+            color: #3d5a2e;
+            border-color: #8ab87a;
+        }
+        .badge-eleat {
+            background: #e8e6f0;
+            color: #3a2e5a;
+            border-color: #8a7ab8;
+        }
+        .badge-atomis {
+            background: #fdf0e0;
+            color: #7a4e1e;
+            border-color: #d4a05a;
+        }
+        .badge-klasik {
+            background: #fdf2e6;
+            color: #7a3e1e;
+            border-color: #d48a5a;
+        }
+        .badge-sinik {
+            background: #f5e8e8;
+            color: #6b2e2e;
+            border-color: #c47a7a;
+        }
+        .badge-epikur {
+            background: #f0f5e8;
+            color: #4a5a2e;
+            border-color: #a4b87a;
+        }
+        .badge-stoik {
+            background: #e8f0f5;
+            color: #2e4a5a;
+            border-color: #7aa4b8;
+        }
+        .badge-skeptik {
+            background: #f3f0e8;
+            color: #5a4a2e;
+            border-color: #b8a47a;
+        }
+        .badge-pythag {
+            background: #f0e8f3;
+            color: #4a2e5a;
+            border-color: #a47ab8;
+        }
+
+        /* Karya - ellipsis dengan tooltip */
+        .karya-cell {
+            max-width: 200px;
+            cursor: default;
+            position: relative;
+        }
+        .karya-cell .karya-teks {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+        }
+        .karya-cell:hover .karya-teks {
+            -webkit-line-clamp: unset;
+            overflow: visible;
+            white-space: normal;
+            background: #fffef9;
+            padding: 6px 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Highlight pencarian */
+        .highlight-match {
+            background: #fde68a;
+            padding: 1px 3px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Tidak ada hasil */
+        .no-result {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--teks-sedang);
+            font-size: 1.1rem;
+            display: none;
+        }
+        .no-result.visible {
+            display: block;
+        }
+        .no-result .ikon-kosong {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        .footer-info {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: var(--teks-sedang);
+            opacity: 0.7;
+            letter-spacing: 0.04em;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .panel-atas {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+            .search-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+            }
+            .search-input-group {
+                max-width: 100%;
+            }
+            .stat-badge {
+                justify-content: center;
+            }
+            .hero-header h1 {
+                font-size: 1.6rem;
+                margin: 0 8px;
+            }
+            .hero-header .laurel-left,
+            .hero-header .laurel-right {
+                font-size: 1.8rem;
+            }
+            table {
+                min-width: 700px;
+                font-size: 0.8rem;
+            }
+            thead th,
+            tbody td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header class="hero-header">
+            <span class="laurel-left">🏛️</span>
+            <h1>Para Filsuf Yunani Kuno</h1>
+            <span class="laurel-right">🏺</span>
+            <span class="hero-subtitle">Ensiklopedia Lengkap &middot; Abad 6 SM – 3 SM</span>
+        </header>
+
+        <!-- Panel Pencarian -->
+        <div class="panel-atas">
+            <div class="search-wrapper">
+                <label for="searchInput">🔍 Cari Filsuf:</label>
+                <div class="search-input-group">
+                    <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Nama, aliran, karya, atau kontribusi..."
+                    autocomplete="off"
+                    >
+                    <span class="search-icon">⌕</span>
+                </div>
+            </div>
+            <button class="btn-reset" id="btnReset" title="Reset pencarian">✕ Reset</button>
+            <div class="stat-badge">
+                <span>Total:</span>
+                <span class="angka" id="totalFilsuf">17</span>
+                <span>Filsuf</span>
+            </div>
+        </div>
+
+        <!-- Ringkasan hasil pencarian -->
+        <p class="ringkasan-cari" id="ringkasanCari"></p>
+
+        <!-- Tabel Data -->
+        <div class="tabel-container">
+            <div class="tabel-scroll">
+                <table id="tabelFilsuf">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Masa Hidup</th>
+                            <th>Asal</th>
+                            <th>Aliran / Pemikiran</th>
+                            <th>Karya Penting</th>
+                            <th>Kontribusi Utama</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyFilsuf">
+                        <!-- Data diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pesan tidak ada hasil -->
+            <div class="no-result" id="noResult">
+                <span class="ikon-kosong">📜</span>
+                <p>Tidak ada filsuf yang cocok dengan pencarian "<strong id="kataKunciKosong"></strong>".</p>
+                <p style="font-size:0.85rem;margin-top:6px;">Coba kata kunci lain atau tekan tombol Reset.</p>
+            </div>
+        </div>
+
+        <p class="footer-info">
+            &copy; 2026 Ensiklopedia Filsafat Yunani Kuno — Data disusun dari sumber historis terpercaya.
+        </p>
+    </div>
+
+    <script>
+        (function() {
+            // ==================== DATA FILSUF YUNANI KUNO ====================
+            const dataFilsuf = [{
+                id: 1,
+                nama: "Thales",
+                lahir: -624,
+                wafat: -546,
+                asal: "Miletus (Ionia)",
+                aliran: "Filsafat Alam (Mazhab Miletus)",
+                kelasBadge: "badge-alam",
+                karya: "Tidak ada karya tertulis yang bertahan; dikenal melalui catatan Aristoteles dan Diogenes Laertius.",
+                kontribusi: "Mengemukakan bahwa air adalah prinsip dasar (arche) segala sesuatu. Merintis pemikiran rasional dan astronomi Yunani."
+            }, {
+                id: 2,
+                nama: "Anaximander",
+                lahir: -610,
+                wafat: -546,
+                asal: "Miletus (Ionia)",
+                aliran: "Filsafat Alam (Mazhab Miletus)",
+                kelasBadge: "badge-alam",
+                karya: "\"On Nature\" (fragmen); diyakini sebagai karya filsafat Yunani tertulis pertama.",
+                kontribusi: "Memperkenalkan konsep 'apeiron' (yang tak terbatas) sebagai prinsip dasar alam semesta. Membuat peta dunia pertama dan teori evolusi awal."
+            }, {
+                id: 3,
+                nama: "Anaximenes",
+                lahir: -585,
+                wafat: -528,
+                asal: "Miletus (Ionia)",
+                aliran: "Filsafat Alam (Mazhab Miletus)",
+                kelasBadge: "badge-alam",
+                karya: "Hanya fragmen pendek yang bertahan; dirujuk oleh Theophrastus dan Aristoteles.",
+                kontribusi: "Menyatakan udara (aer) sebagai prinsip dasar. Menjelaskan perubahan materi melalui kondensasi dan rarefaksi."
+            }, {
+                id: 4,
+                nama: "Pythagoras",
+                lahir: -570,
+                wafat: -495,
+                asal: "Samos",
+                aliran: "Pythagoreanisme",
+                kelasBadge: "badge-pythag",
+                karya: "Tidak ada tulisan langsung; ajaran diteruskan oleh murid-muridnya (Philolaus, Archytas).",
+                kontribusi: "Teorema Pythagoras, harmoni matematis alam semesta, konsep perpindahan jiwa (metempsychosis), dan dasar-dasar teori musik."
+            }, {
+                id: 5,
+                nama: "Heraclitus",
+                lahir: -535,
+                wafat: -475,
+                asal: "Ephesus (Ionia)",
+                aliran: "Filsafat Perubahan",
+                kelasBadge: "badge-alam",
+                karya: "\"On Nature\" (fragmen sekitar 130 bertahan).",
+                kontribusi: "Doktrin 'Panta rhei' (semuanya mengalir). Mengemukakan bahwa api adalah elemen dasar dan realitas selalu dalam perubahan konstan."
+            }, {
+                id: 6,
+                nama: "Parmenides",
+                lahir: -515,
+                wafat: -450,
+                asal: "Elea (Italia Selatan)",
+                aliran: "Mazhab Eleatik",
+                kelasBadge: "badge-eleat",
+                karya: "\"On Nature\" — puisi filosofis yang sebagian besar bertahan.",
+                kontribusi: "Membedakan antara 'jalan kebenaran' (realitas abadi) dan 'jalan opini' (ilusi indrawi). Menegaskan bahwa 'yang ada' itu satu, kekal, dan tidak berubah."
+            }, {
+                id: 7,
+                nama: "Zeno dari Elea",
+                lahir: -490,
+                wafat: -430,
+                asal: "Elea (Italia Selatan)",
+                aliran: "Mazhab Eleatik",
+                kelasBadge: "badge-eleat",
+                karya: "Paradoks-paradoks yang dicatat oleh Aristoteles dalam \"Fisika\".",
+                kontribusi: "Paradoks Zeno (Achilles & kura-kura, anak panah, dikotomi) yang mempertanyakan konsep ruang, waktu, dan gerak. Meletakkan dasar logika dialektis."
+            }, {
+                id: 8,
+                nama: "Empedocles",
+                lahir: -494,
+                wafat: -434,
+                asal: "Akragas (Sisilia)",
+                aliran: "Pluralisme",
+                kelasBadge: "badge-alam",
+                karya: "\"On Nature\" dan \"Purifications\" (fragmen signifikan).",
+                kontribusi: "Teori empat elemen klasik (tanah, udara, api, air). Konsep dua kekuatan kosmik: Cinta (philia) dan Perselisihan (neikos)."
+            }, {
+                id: 9,
+                nama: "Anaxagoras",
+                lahir: -500,
+                wafat: -428,
+                asal: "Clazomenae (Ionia)",
+                aliran: "Pluralisme",
+                kelasBadge: "badge-alam",
+                karya: "Fragmen dari buku \"On Nature\".",
+                kontribusi: "Memperkenalkan konsep 'Nous' (Akal Ilahi) sebagai penggerak alam semesta. Menjelaskan bahwa segala sesuatu mengandung benih (spermata) dari segala hal."
+            }, {
+                id: 10,
+                nama: "Democritus",
+                lahir: -460,
+                wafat: -370,
+                asal: "Abdera (Thrace)",
+                aliran: "Atomisme",
+                kelasBadge: "badge-atomis",
+                karya: "Banyak karya (etika, fisika, matematika); hanya fragmen yang bertahan. \"Little World-System\" adalah yang paling dikenal.",
+                kontribusi: "Mengembangkan teori atom bersama Leucippus: alam semesta terdiri dari atom dan kekosongan. Menjelaskan persepsi indrawi secara mekanistik."
+            }, {
+                id: 11,
+                nama: "Socrates",
+                lahir: -470,
+                wafat: -399,
+                asal: "Athena",
+                aliran: "Filsafat Klasik (Etika)",
+                kelasBadge: "badge-klasik",
+                karya: "Tidak menulis apapun; ajarannya dicatat oleh Plato (dialog-dialog) dan Xenophon.",
+                kontribusi: "Metode Socratic (elenchus), etika berbasis pengetahuan, 'kenalilah dirimu sendiri' (gnothi seauton). Dihukum mati dengan meminum racun hemlock."
+            }, {
+                id: 12,
+                nama: "Plato",
+                lahir: -428,
+                wafat: -348,
+                asal: "Athena",
+                aliran: "Filsafat Klasik (Idealisme)",
+                kelasBadge: "badge-klasik",
+                karya: "\"Republik\", \"Apology\", \"Phaedo\", \"Symposium\", \"Timaeus\", \"Phaedrus\", dan ~35 dialog lainnya.",
+                kontribusi: "Teori Bentuk/Form (Idea), pendirian Akademi (Akademia), filsafat politik ideal, dualisme jiwa-raga, dan alegori Gua."
+            }, {
+                id: 13,
+                nama: "Aristotle",
+                lahir: -384,
+                wafat: -322,
+                asal: "Stagira (Macedonia)",
+                aliran: "Filsafat Klasik (Empirisme)",
+                kelasBadge: "badge-klasik",
+                karya: "\"Nicomachean Ethics\", \"Politics\", \"Metaphysics\", \"Physics\", \"Poetics\", \"Organon\", \"De Anima\".",
+                kontribusi: "Mendirikan Lyceum, logika silogisme, etika kebajikan (golden mean), klasifikasi makhluk hidup, dan sistematisasi ilmu pengetahuan."
+            }, {
+                id: 14,
+                nama: "Diogenes dari Sinope",
+                lahir: -412,
+                wafat: -323,
+                asal: "Sinope (Paphlagonia)",
+                aliran: "Sinisme (Cynicism)",
+                kelasBadge: "badge-sinik",
+                karya: "Tidak ada tulisan yang bertahan; kisah hidupnya dicatat Diogenes Laertius dalam \"Lives of Eminent Philosophers\".",
+                kontribusi: "Hidup asketis ekstrem, menolak konvensi sosial, tinggal dalam tong (pithos). Mempengaruhi perkembangan Stoisisme dan filsafat kehidupan sederhana."
+            }, {
+                id: 15,
+                nama: "Epicurus",
+                lahir: -341,
+                wafat: -270,
+                asal: "Samos",
+                aliran: "Epicureanisme",
+                kelasBadge: "badge-epikur",
+                karya: "\"On Nature\" (37 buku, sebagian besar hilang), \"Letter to Menoeceus\", \"Principal Doctrines\".",
+                kontribusi: "Filsafat kesenangan (hedone) yang bijaksana, ataraxia (ketenangan jiwa), penolakan takhayul dan takut kematian. Atomisme etis."
+            }, {
+                id: 16,
+                nama: "Zeno dari Citium",
+                lahir: -334,
+                wafat: -262,
+                asal: "Citium (Siprus)",
+                aliran: "Stoisisme (Awal)",
+                kelasBadge: "badge-stoik",
+                karya: "\"Republik\" (Stoik), risalah-risalah etika dan logika; hanya fragmen yang bertahan.",
+                kontribusi: "Mendirikan mazhab Stoa (Stoa Poikile). Mengajarkan keselarasan hidup dengan alam (logos), pembagian filsafat menjadi logika, fisika, dan etika."
+            }, {
+                id: 17,
+                nama: "Pyrrho dari Elis",
+                lahir: -360,
+                wafat: -270,
+                asal: "Elis",
+                aliran: "Skeptisisme (Pyrrhonisme)",
+                kelasBadge: "badge-skeptik",
+                karya: "Tidak menulis; ajarannya dicatat oleh muridnya Timon dari Phlius.",
+                kontribusi: "Mendirikan aliran skeptisisme radikal. Menangguhkan penilaian (epoche) untuk mencapai ketenangan (ataraxia). Mempengaruhi skeptisisme akademik."
+            }];
+
+            // ==================== REFERENSI DOM ====================
+            const tbody = document.getElementById('tbodyFilsuf');
+            const searchInput = document.getElementById('searchInput');
+            const btnReset = document.getElementById('btnReset');
+            const totalSpan = document.getElementById('totalFilsuf');
+            const ringkasanCari = document.getElementById('ringkasanCari');
+            const noResultDiv = document.getElementById('noResult');
+            const kataKunciKosong = document.getElementById('kataKunciKosong');
+
+            // ==================== FUNGSI BANTU ====================
+            function formatTahun(tahunNegatif) {
+                const abs = Math.abs(tahunNegatif);
+                return abs + ' SM';
+            }
+
+            function rentangHidup(lahir, wafat) {
+                return formatTahun(lahir) + ' – ' + formatTahun(wafat);
+            }
+
+            function escapeHTML(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            function highlightTeks(teksAsli, kataKunci) {
+                if (!kataKunci || kataKunci.trim() === '') return escapeHTML(teksAsli);
+                const escapedText = escapeHTML(teksAsli);
+                const escapedKeyword = escapeHTML(kataKunci.trim());
+                // Buat regex case-insensitive untuk kata kunci
+                const regex = new RegExp(`(${escapedKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                return escapedText.replace(regex,
+                    '<span class="highlight-match">$1</span>');
+            }
+
+            // ==================== RENDER TABEL ====================
+            function renderTabel(dataArray, kataKunci = '') {
+                tbody.innerHTML = '';
+                totalSpan.textContent = dataArray.length;
+
+                if (dataArray.length === 0) {
+                    noResultDiv.classList.add('visible');
+                    kataKunciKosong.textContent = kataKunci || '...';
+                    ringkasanCari.innerHTML =
+                        'Tidak ada hasil untuk <span class="highlight">"' + escapeHTML(kataKunci) + '"</span>';
+                } else {
+                    noResultDiv.classList.remove('visible');
+                    if (kataKunci && kataKunci.trim() !== '') {
+                        ringkasanCari.innerHTML =
+                            'Menampilkan <span class="highlight">' + dataArray.length +
+                            '</span> dari <span class="highlight">' + dataFilsuf.length +
+                            '</span> filsuf untuk pencarian "<span class="highlight">' + escapeHTML(kataKunci) +
+                            '</span>"';
+                    } else {
+                        ringkasanCari.innerHTML =
+                            'Menampilkan seluruh <span class="highlight">' + dataFilsuf.length + '</span> filsuf.';
+                    }
+                }
+
+                dataArray.forEach(f => {
+                    const tr = document.createElement('tr');
+
+                    // Nama
+                    const tdNama = document.createElement('td');
+                    tdNama.innerHTML = highlightTeks(f.nama, kataKunci);
+                    tr.appendChild(tdNama);
+
+                    // Masa Hidup
+                    const tdMasa = document.createElement('td');
+                    tdMasa.textContent = rentangHidup(f.lahir, f.wafat);
+                    tr.appendChild(tdMasa);
+
+                    // Asal
+                    const tdAsal = document.createElement('td');
+                    tdAsal.innerHTML = highlightTeks(f.asal, kataKunci);
+                    tr.appendChild(tdAsal);
+
+                    // Aliran
+                    const tdAliran = document.createElement('td');
+                    const spanAliran = document.createElement('span');
+                    spanAliran.className = 'badge-aliran ' + f.kelasBadge;
+                    spanAliran.innerHTML = highlightTeks(f.aliran, kataKunci);
+                    tdAliran.appendChild(spanAliran);
+                    tr.appendChild(tdAliran);
+
+                    // Karya
+                    const tdKarya = document.createElement('td');
+                    tdKarya.className = 'karya-cell';
+                    const spanKarya = document.createElement('span');
+                    spanKarya.className = 'karya-teks';
+                    spanKarya.innerHTML = highlightTeks(f.karya, kataKunci);
+                    tdKarya.appendChild(spanKarya);
+                    tr.appendChild(tdKarya);
+
+                    // Kontribusi
+                    const tdKontribusi = document.createElement('td');
+                    tdKontribusi.innerHTML = highlightTeks(f.kontribusi, kataKunci);
+                    tr.appendChild(tdKontribusi);
+
+                    tbody.appendChild(tr);
+                });
+            }
+
+            // ==================== FUNGSI PENCARIAN ====================
+            function cariFilsuf(kataKunci) {
+                const keyword = kataKunci.trim().toLowerCase();
+                if (keyword === '') {
+                    renderTabel(dataFilsuf, '');
+                    return;
+                }
+                const hasil = dataFilsuf.filter(f => {
+                    return (
+                        f.nama.toLowerCase().includes(keyword) ||
+                        f.asal.toLowerCase().includes(keyword) ||
+                        f.aliran.toLowerCase().includes(keyword) ||
+                        f.karya.toLowerCase().includes(keyword) ||
+                        f.kontribusi.toLowerCase().includes(keyword) ||
+                        rentangHidup(f.lahir, f.wafat).toLowerCase().includes(keyword)
+                    );
+                });
+                renderTabel(hasil, kataKunci.trim());
+            }
+
+            // ==================== EVENT LISTENER ====================
+            searchInput.addEventListener('input', function() {
+                cariFilsuf(this.value);
+            });
+
+            btnReset.addEventListener('click', function() {
+                searchInput.value = '';
+                cariFilsuf('');
+                searchInput.focus();
+            });
+
+            // Tombol Escape untuk reset
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && document.activeElement === searchInput) {
+                    searchInput.value = '';
+                    cariFilsuf('');
+                    searchInput.blur();
+                }
+            });
+
+            // ==================== INISIALISASI ====================
+            renderTabel(dataFilsuf, '');
+            totalSpan.textContent = dataFilsuf.length;
+        })();
+    </script>
+</body>
+</html>
